@@ -33,11 +33,23 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/next_button"
-        android:drawableRight="@drawable/ic_launcher_foreground"
-        android:text="@string/next_button"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/prev_button"
+            android:text="@string/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:text="@string/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </LinearLayout>

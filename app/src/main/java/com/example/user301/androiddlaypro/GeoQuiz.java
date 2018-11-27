@@ -11,6 +11,7 @@ public class GeoQuiz extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
     private Button mNextButton;
+    private Button mPrevButton;
     private TextView mQuestionTextView;
     // массив вопросов
     private Question [] mQuestionBank = new Question[]{
@@ -60,12 +61,26 @@ public class GeoQuiz extends AppCompatActivity {
             }
         });
 
+        mPrevButton = findViewById(R.id.prev_button);
+        mPrevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prevApdateQuestions();
+            }
+        });
+
 
 
     }
     // для обновления вопросов
     private void updateQuestion (){
         mID = (mID+1) % mQuestionBank.length;
+        int id = mQuestionBank[mID].getmTextResID();
+        mQuestionTextView.setText(id);
+    }
+    // прев апдейт
+    private void prevApdateQuestions(){
+        mID = (mID-1) % mQuestionBank.length;
         int id = mQuestionBank[mID].getmTextResID();
         mQuestionTextView.setText(id);
     }
