@@ -53,6 +53,13 @@ public class GeoQuiz extends AppCompatActivity {
         mQuestionTextView = findViewById(R.id.question_text_view);
         int id = mQuestionBank[mID].getmTextResID();
         mQuestionTextView.setText(id);
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateQuestion();
+            }
+        });
+
 
 
     }
